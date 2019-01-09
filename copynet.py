@@ -3,7 +3,7 @@ import collections
 import tensorflow as tf
 from tensorflow.python.util import nest
 from tensorflow.contrib.framework.python.framework import tensor_util
-
+print('这是copynet')
 class CopyNetWrapperState(
     collections.namedtuple("CopyNetWrapperState", ("cell_state", "last_ids", "prob_c"))):
 

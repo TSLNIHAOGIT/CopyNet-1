@@ -471,6 +471,7 @@ sentences:
 cat > /tmp/my_infer_file.vi
 # (copy and paste some sentences from /tmp/nmt_data/tst2013.vi)
 
+#只能在外部运行，内部有包导入问题，暂时不知道什么原因
 python -m nmt.nmt \
     --out_dir=/tmp/nmt_model \
     --inference_input_file=/tmp/my_infer_file.vi \

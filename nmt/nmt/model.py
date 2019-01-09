@@ -18,6 +18,24 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import os
+import sys
+'''
+nmt ozintel$ ls
+CONTRIBUTING.md	LICENSE		README.md	nmt		nmt_data	nmt_model
+MacBook-Pro-3:nmt ozintel$ python3.6 -m nmt.nmt     --src=vi --tgt=en     --vocab_prefix=nmt_data/vocab      --train_prefix=nmt_data/train     --dev_prefix=nmt_data/tst2012      --test_prefix=nmt_data/tst2013     --out_dir=nmt_model     --num_train_steps=12000     --steps_per_stats=100     --num_layers=2     --num_units=128     --dropout=0.2     --metrics=bleu
+当前目录 /Users/ozintel/Google 云端硬盘/CopyNet-1/nmt
+__name__ nmt.model  #此时'.'代表model所在的目录即nmt;.copynet即是nmt.copynet
+model 当前执行路径 /Users/ozintel/Google 云端硬盘/CopyNet-1/nmt
+.copynet 绝对路径 /Users/ozintel/Google 云端硬盘/CopyNet-1/nmt/copynet
+.copynet 绝对路径 是否存在 False
+'''
+print('__name__',__name__)
+
+print('model 当前执行路径',os.path.abspath('.'))
+print('.copynet 绝对路径',os.path.abspath('./copynet'))
+print( '.copynet 绝对路径 是否存在',os.path.exists(os.path.abspath('./copynet')))
+print('sys.path',sys.path)
 import abc
 
 import tensorflow as tf
@@ -29,7 +47,7 @@ from .utils import iterator_utils
 from .utils import misc_utils as utils
 from .copynet import CopyNetWrapper, CopyNetWrapperState
 
-utils.check_tensorflow_version()
+# utils.check_tensorflow_version()
 
 __all__ = ["BaseModel", "Model"]
 

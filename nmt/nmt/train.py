@@ -30,7 +30,7 @@ from . import model_helper
 from .utils import misc_utils as utils
 from .utils import nmt_utils
 
-utils.check_tensorflow_version()
+# utils.check_tensorflow_version()
 
 __all__ = [
     "run_sample_decode", "run_internal_eval", "run_external_eval",
